@@ -1,0 +1,14 @@
+# Configuração do verificador de links (https://github.com/lycheeverse/lychee)
+# Uso: lychee --no-progress './**/*.md'
+#
+# Os domínios abaixo bloqueiam ou falham com verificadores automatizados (bot-block,
+# erro de negociação HTTP/2 do lychee), mesmo estando no ar — verificados manualmente
+# com curl e navegador nesta sessão (HTTP 200):
+# - linkedin.com: HTTP 999 a qualquer verificador automatizado.
+# - gemini.google.com: "HTTP/2 protocol error" no cliente do lychee.
+# - skillsoft.com: HTTP 403 ao verificador padrão do lychee (passa com UA de navegador).
+exclude = [
+  "^https://www\\.linkedin\\.com/",
+  "^https://gemini\\.google\\.com/",
+  "^https://www\\.skillsoft\\.com/",
+]
